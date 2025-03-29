@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="data:,">
+    <title>XMR Miner</title>
+    
+    <!-- Встроенные стили -->
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #000000;
+            --button-color: #2481cc;
+            --secondary-bg: #f4f4f5;
+        }
+
+        body {
+            margin: 0;
+            padding: 12px;
+            font-family: system-ui;
+            background: var(--bg-color);
+            color: var(--text-color);
+            min-height: 100vh;
+        }
+
+        #app {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .tg-button {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            background: var(--button-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Основной контейнер приложения -->
+    <div id="app">Загрузка...</div>
+
+    <!-- Обязательный скрипт Telegram -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+    <!-- Главный модуль приложения -->
+    <script type="module">
+        import { initUI } from './ui.js';
+        
+        // Инициализация после полной загрузки
+        document.addEventListener('DOMContentLoaded', () => {
+            Telegram.WebApp.ready();
+            Telegram.WebApp.expand();
+            initUI();
+        });
+    </script>
+</body>
+</html>
