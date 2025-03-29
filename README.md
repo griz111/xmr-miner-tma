@@ -1,0 +1,1 @@
+# xmr-miner-tma
